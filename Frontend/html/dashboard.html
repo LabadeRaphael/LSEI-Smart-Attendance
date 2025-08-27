@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSEI Smart Attendance - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">LSEI Smart Attendance</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="index.html" id="logoutBtn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Welcome, <span id="userName">Student</span> 👋</h2>
+    <p class="subtitle">Manage your attendance, view records, and update your details.</p>
+
+    <section class="dashboard-cards">
+      <div class="card">
+        <h3>📅 Mark Attendance</h3>
+        <p>Click here to check in for today’s class.</p>
+        <a href="attendance.html" class="btn">Go</a>
+      </div>
+
+      <div class="card">
+        <h3>📊 View Records</h3>
+        <p>See your past attendance history and statistics.</p>
+        <a href="attendance.html" class="btn">Go</a>
+      </div>
+
+      <div class="card">
+        <h3>👤 Profile</h3>
+        <p>Update your personal details and password.</p>
+        <a href="profile.html" class="btn">Go</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
