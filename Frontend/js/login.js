@@ -43,6 +43,37 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                 email: email.value,
                 password: password.value
             });
+            
+              // for backend data
+            
+            // const data={
+            //  email: email.value,
+            //    password: password.value
+            // }
+            // console.log(data);
+            
+            
+            // Backend Post Request
+            
+            // try {
+            //     const response = await fetch('/auth/login', {
+            //         method: "POST",
+            //         headers: {
+            //             "Content-Type": "application/json",
+            //         },
+            //         body: JSON.stringify(data),
+            //     });
+
+            //     if (!response.ok) {
+            //         throw new Error(response.message || "Request failed." );
+            //     }
+
+            //     const result = await response.json();
+            //     console.log("Success:", result);
+            //     return result;
+            // } catch (error) {
+            //     console.error("Error:", error.message);
+            // }
             alert('Login successful!');
             this.reset();
             document.querySelectorAll('input').forEach(input => input.classList.remove('is-valid'));

@@ -1,4 +1,4 @@
-/* ===== General Reset ===== */
+/* this is just general i will remove it soon  */
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +18,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4b2e19; /* chocolate */
-  color: #fff;
+  /* background: #4b2e19;  */
+  background-color: #ffffe7;
+   color: brown;
   padding: 15px 20px;
 }
 
@@ -36,14 +37,18 @@ body {
 
 .navbar .nav-links a {
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
+  color: brown;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .navbar .nav-links a:hover,
 .navbar .nav-links a.active {
-  color: #ffb347; /* caramel highlight */
+  /* color: #ffb347; */
+  color: #4a3b24;
+  
+  /* caramel highlight */
 }
 
 /* ===== Container ===== */

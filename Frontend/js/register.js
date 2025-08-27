@@ -101,7 +101,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             //     });
 
             //     if (!response.ok) {
-            //         throw new Error("Request failed with status " + response.status);
+            //         throw new Error(response.message || "Request failed.");
             //     }
 
             //     const result = await response.json();
