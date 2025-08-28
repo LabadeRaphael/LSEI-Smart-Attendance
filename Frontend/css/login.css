@@ -7,7 +7,7 @@
 
 body {
   background-color: #4c0013; 
-  color: #2e1a0f;  /* dark chocolate */
+  color: #2e1a0f;
   line-height: 1.6;
 }
 
@@ -27,11 +27,11 @@ form {
 }
 
 .logo {
-  display: block;          /* centers better with margin auto */
-  max-width: 200px;        /* sets a good max size */
-  width: 100%;             /* scales down automatically */
-  height: auto;            /* keeps aspect ratio */
-  margin: 0 auto;          /* centers horizontally */
+  display: block;        
+  max-width: 200px;       
+  width: 100%;             
+  height: auto;           
+  margin: 0 auto;          
 }
 label{
   display: block;
@@ -56,7 +56,7 @@ input:focus {
   font-size: 0.85rem;
   margin-top: 4px;
   display: block;
-  min-height: 20px; /* Reserve space to prevent layout shift */
+  min-height: 20px; 
 } 
 
 .form-group input.is-valid {
@@ -81,4 +81,7 @@ button {
 
 button:hover {
   background: #6b4226;
+}
+.redirect-text {
+  margin-top: 10px;
 }

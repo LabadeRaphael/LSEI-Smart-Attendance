@@ -17,13 +17,14 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar (Topbar on mobile) */
+/* Sidebar */
 .sidebar {
   background-color: #4c0013;
   color: white;
   transition: all 0.3s ease;
 }
 
+/* Sidebar Header */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -81,12 +82,15 @@ body {
   top: 15px;
   right: 20px;
 }
-.logo{
-    display: flex;
+
+.logo {
+  display: flex;
 }
-.logo h2{
-    margin-top: 20px;
+
+.logo h2 {
+  margin-top: 20px;
 }
+
 /* Main Content */
 .main-content {
   padding: 20px;
@@ -118,7 +122,7 @@ body {
 
 .logout-btn {
   background-color: #dc3545;
-  color: #fff;
+  color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
@@ -139,34 +143,6 @@ body {
 
 .content-section.active {
   display: block;
-}
-
-/* Dashboard Cards */
-.dashboard-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.card h3 {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2c3e50;
 }
 
 /* Table Sections */
@@ -215,24 +191,68 @@ body {
   color: white;
 }
 
-.action-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.form-group input, .form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 16px;
-  margin-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.action-btn.edit {
-  color: #007bff;
-}
-
-.action-btn.delete {
+.form-group .error-message {
   color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+  min-height: 20px; 
 }
 
-.action-btn:hover {
-  opacity: 0.8;
+.form-group input.is-valid, .form-group select.is-valid {
+  border-color: #28a745;
+}
+
+.form-group input.is-invalid, .form-group select.is-invalid {
+  border-color: #dc3545;
+}
+
+.btn {
+  background-color: #4c0013;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #570116e7;
+}
+
+.attendance-message {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #28a745;
 }
 
 /* Responsive Design */
@@ -247,6 +267,7 @@ body {
     position: fixed;
     height: 100%;
     overflow-y: auto;
+    /* transform: translateX(0); */
   }
 
   .sidebar-nav ul {
@@ -280,11 +301,19 @@ body {
     width: 100%;
     height: auto;
     position: fixed;
-     top: 0;
+    top: 0;
     left: 0;
+    /* transform: translateX(-100%);
+    z-index: 1000; */
   }
+
+  /* .sidebar.expanded {
+    transform: translateX(0);
+  } */
+
   .sidebar-header {
     justify-content: space-between;
+    /* padding: 10px 20px; */
   }
 
   .sidebar-nav {
@@ -297,30 +326,29 @@ body {
 
   .sidebar-nav ul {
     flex-direction: column;
+    /* justify-content: space-around; */
   }
 
   .sidebar-nav li {
     margin-bottom: 10px;
   }
-.sidebar-nav a {
-  display: flex;
-  align-items: center; 
-  gap: 10px;           
-  padding: 10px 15px;
-  font-weight: bold;
-}
-  
-.sidebar-nav i {
-  flex-shrink: 0;        
-  font-size: 25px;       
-  width: 15px;
-  margin-right: auto;
 
-}
-  .dashboard-cards {
-    grid-template-columns: 1fr;
+  .sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    padding: 10px 15px;
+    font-weight: bold;
   }
-   .main-content {
+
+  .sidebar-nav i {
+    flex-shrink: 0;
+    font-size: 25px;
+    width: 15px;
+    margin-right: auto;
+  }
+
+  .main-content {
     margin-left: 0;
     padding-top: 70px;
   }
@@ -342,5 +370,13 @@ body {
 
   .table-section {
     overflow-x: auto;
+  }
+
+  .form-group input, .form-group select {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
   }
 }
