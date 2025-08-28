@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSEI Smart Attendance - Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+        <div class="logo">
+            <img src="../public/logo.png" alt="LSEI Logo" class="sidebar-logo">
+            <h2>LSEI Admin</h2>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="#users"><i class="fas fa-users"></i> Users</a></li>
+          <li><a href="#attendance"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+          <li><a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <h1>Admin Dashboard</h1>
+        <div class="user-profile">
+          <span>Admin User</span>
+          <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+      </header>
+
+      <!-- Sections for Navigation -->
+      <section id="dashboard" class="content-section active">
+        <!-- Dashboard Cards -->
+        <div class="dashboard-cards">
+          <div class="card">
+            <h3>Total Users</h3>
+            <p id="totalUsers">Loading...</p>
+          </div>
+          <div class="card">
+            <h3>Today's Attendance</h3>
+            <p id="todayAttendance">Loading...</p>
+          </div>
+          <div class="card">
+            <h3>Active Sessions</h3>
+            <p id="activeSessions">Loading...</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="users" class="content-section">
+        <!-- User Management -->
+        <div class="table-section">
+          <h2>User Management</h2>
+          <table class="data-table" id="usersTable">
+            <thead>
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Users will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="attendance" class="content-section">
+        <!-- Recent Attendance Table -->
+        <div class="table-section">
+          <h2>Recent Attendance</h2>
+          <table class="data-table" id="attendanceTable">
+            <thead>
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Attendance will be loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="reports" class="content-section">
+        <h2>Reports</h2>
+        <p>Reports content will be loaded here.</p>
+      </section>
+
+      <section id="settings" class="content-section">
+        <h2>Settings</h2>
+        <p>Settings content will be loaded here.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
