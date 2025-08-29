@@ -27,11 +27,11 @@ form {
 }
 
 .logo {
-  display: block;          /* centers better with margin auto */
-  max-width: 200px;        /* sets a good max size */
-  width: 100%;             /* scales down automatically */
-  height: auto;            /* keeps aspect ratio */
-  margin: 0 auto;          /* centers horizontally */
+  display: block;        
+  max-width: 200px;        
+  width: 100%;         
+  height: auto;            
+  margin: 0 auto;          
 }
 label{
   display: block;
@@ -69,18 +69,18 @@ input:focus {
 
 /* ====== Button====== */
 button {
-  background: #4b2e19;
+  background-color: #4c0013;
   color: #fff;
-  padding: 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  padding: 12px;
   font-size: 1rem;
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #6b4226;
+  background-color: #4b0315e7;
 }
 .redirect-text {
   margin-top: 10px;

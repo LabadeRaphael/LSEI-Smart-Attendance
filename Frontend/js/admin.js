@@ -35,29 +35,84 @@ document.querySelectorAll('.sidebar-nav a').forEach(link => {
 // Logout functionality
 document.getElementById('logoutBtn').addEventListener('click', function() {
   try {
-    // Simulate API call to logout endpoint
-    fetch('/auth/logout', {
+    document.getElementById('logoutModal').style.display = 'flex';
+  } catch (error) {
+    console.error('Error opening logout modal:', error);
+  }
+});
+
+document.getElementById('cancelLogout').addEventListener('click', function() {
+  try {
+    document.getElementById('logoutModal').style.display = 'none';
+  } catch (error) {
+    console.error('Error closing logout modal:', error);
+  }
+});
+
+document.querySelector('.modal-close').addEventListener('click', function() {
+  try {
+    document.getElementById('logoutModal').style.display = 'none';
+  } catch (error) {
+    console.error('Error closing logout modal:', error);
+  }
+});
+
+document.getElementById('logoutModal').addEventListener('click', function(event) {
+  try {
+    if (event.target === this) {
+      this.style.display = 'none';
+    }
+  } catch (error) {
+    console.error('Error closing logout modal on overlay click:', error);
+  }
+});
+  // message displayer function
+  function showMessage(message, type) {
+  try {
+    let messageElement = document.getElementById(`${type}Message`);
+    
+    // Create message element if it doesn't exist
+    if (!messageElement) {
+      messageElement = document.createElement('div');
+      messageElement.id = `${type}Message`;
+      messageElement.className = type === 'error' ? 'message-error' : 'message-success';
+      document.body.appendChild(messageElement);
+    }
+
+    // Set message content and display
+    messageElement.textContent = message;
+    messageElement.style.display = 'block';
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+      messageElement.style.display = 'none';
+    }, 3000);
+  } catch (error) {
+    console.error('Error displaying message:', error);
+  }
+}
+document.getElementById('confirmLogout').addEventListener('click', async function() {
+  try {
+    const response = await fetch('/api/logout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Add auth token if needed: 'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
-    })
-    .then(response => {
-      if (response.ok) {
-        alert('Logged out successfully!');
-        // Redirect to login page
-        window.location.href = 'index.html';
-      } else {
-        throw new Error('Logout failed');
-      }
-    })
-    .catch(error => {
-      console.error('Logout error:', error);
-      alert('An error occurred during logout.');
     });
+
+    if (response.ok) {
+      showMessage('Logged out successfully!', 'success');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1000); // Delaying redirect for message visibility
+    } else {
+      throw new Error('Logout failed');
+    }
   } catch (error) {
-    console.error('Error in logout:', error);
+    console.error('Logout error:', error);
+    showMessage('An error occurred during logout.', 'error');
+  } finally {
+    document.getElementById('logoutModal').style.display = 'none';
   }
 });
 

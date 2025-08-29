@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
   <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
 </head>
+
 <body>
   <div class="dashboard-container">
     <!-- Sidebar -->
@@ -16,8 +18,8 @@
       <div class="sidebar-header">
         <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
         <div class="logo">
-            <img src="../public/logo.png" alt="LSEI Logo" class="sidebar-logo">
-            <h2>LSEI Admin</h2>
+          <img src="../public/logo.png" alt="LSEI Logo" class="sidebar-logo">
+          <h2>LSEI Admin</h2>
         </div>
       </div>
       <nav class="sidebar-nav">
@@ -112,9 +114,25 @@
         <h2>Settings</h2>
         <p>Settings content will be loaded here.</p>
       </section>
+
+      <!-- Logout Modal -->
+      <div id="logoutModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <h2>Confirm Logout</h2>
+          <div class="modal-body">
+            <p>Are you sure you want to log out?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="modal-btn btn-cancel" id="cancelLogout">Cancel</button>
+            <button type="button" class="modal-btn" id="confirmLogout">Confirm</button>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 
   <script src="../js/admin.js"></script>
 </body>
+
 </html>

@@ -69,18 +69,18 @@ input:focus {
 
 /* ====== Button====== */
 button {
-  background: #4b2e19;
+  background-color: #4c0013;
   color: #fff;
-  padding: 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  padding: 12px;
   font-size: 1rem;
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #6b4226;
+  background-color: #4b0315e7;
 }
 .redirect-text {
   margin-top: 10px;
